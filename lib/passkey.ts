@@ -7,7 +7,7 @@ import prisma from "@/utils/db";
 
 const passkeyApi = tenant({
     apiKey: process.env.PASSKEYS_API_KEY!,
-    tenantId: process.env.PASSKEYS_TENANT_ID!,
+    tenantId: process.env.NEXT_PUBLIC_PASSKEYS_TENANT_ID!,
 });
 
 export async function startServerPasskeyRegistration() {

@@ -13,8 +13,8 @@ export const authOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_ID as string,
-      clientSecret: process.env.GITHUB_SECRET_ID as string,
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET_ID!,
     }),
     EmailProvider({
       server: {
@@ -29,8 +29,8 @@ export const authOptions = {
     }),
     PasskeyProvider({
       tenant: tenant({
-        tenantId: process.env.PASSKEYS_API_KEY!,
-        apiKey: process.env.PASSKEYS_TENANT_ID!,
+        apiKey: process.env.PASSKEYS_API_KEY!,
+        tenantId: process.env.NEXT_PUBLIC_PASSKEYS_TENANT_ID!,
       }),
       async authorize({ userId }) {
         const user = await prisma.user.findUnique({ where: { id: userId } });
