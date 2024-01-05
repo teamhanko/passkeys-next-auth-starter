@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { authOptions } from '@/utils/auth'
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
+import prisma from '@/utils/db'
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
