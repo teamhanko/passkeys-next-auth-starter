@@ -1,9 +1,9 @@
 "use server"
 
-import { authOptions } from "@/utils/auth";
 import { getServerSession } from "next-auth";
 import { tenant } from "@teamhanko/passkeys-next-auth-provider";
-import prisma from "@/utils/db";
+import prisma from "./db";
+import { authOptions } from "./auth";
 
 const passkeyApi = tenant({
     apiKey: process.env.PASSKEYS_API_KEY!,

@@ -14,7 +14,7 @@ const SignInForm = () => {
     async function signInWithEmail() {
         const signInResult = await signIn('email', {
             email,
-            callbackUrl: `${window.location.origin}`,
+            callbackUrl: `${window.location.origin}/dashboard`,
             redirect: false,
         })
 
@@ -31,7 +31,7 @@ const SignInForm = () => {
                 <Label>Email</Label>
                 <Input onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="name@example.com" />
             </div>
-            <Button type="submit" className="mt-4 w-full">Login with Email</Button>
+            <Button type="submit" className="mt-4 w-full">Sign in with Email</Button>
         </form>
     )
 }

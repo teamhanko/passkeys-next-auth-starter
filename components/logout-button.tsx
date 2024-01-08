@@ -7,7 +7,7 @@ export const LogoutButton = () => {
     return (
         <Button onClick={() => signOut(
             {
-                callbackUrl: `${window.location.origin}/auth`
+                callbackUrl: `${window.location.origin}/`
             }
         )} className="mt-4">Logout</Button>
     )

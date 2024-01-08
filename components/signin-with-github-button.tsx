@@ -7,8 +7,8 @@ import { signIn } from "next-auth/react"
 const SignInWithGithub = () => {
     return (
         <Button onClick={() => signIn('github', {
-            callbackUrl: `${window.location.origin}`
-        })} className="mt-4" variant="secondary">Login with GitHub <Github className="w-4 h-4 ml-4" /> </Button>
+            callbackUrl: `${window.location.origin}/dashboard`
+        })} className="mt-4" variant="secondary">  <Github className="w-4 h-4 mr-2" /> GitHub </Button>
     )
 }
 
