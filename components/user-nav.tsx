@@ -46,12 +46,6 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                    <Link href="/dashboard">Dashboard</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                    <Link href="/dashboard/billing">Billing</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
                     <Link href="/dashboard/settings">Settings</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -60,7 +54,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
                     onSelect={(event) => {
                         event.preventDefault()
                         signOut({
-                            callbackUrl: `${window.location.origin}/login`,
+                            callbackUrl: `${window.location.origin}/`,
                         })
                     }}
                 >

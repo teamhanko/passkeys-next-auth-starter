@@ -14,6 +14,7 @@ export const authOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET_ID!,
+      allowDangerousEmailAccountLinking: true,
     }),
     EmailProvider({
       server: {
@@ -34,10 +35,7 @@ export const authOptions = {
       async authorize({ userId }) {
         const user = await prisma.user.findUnique({ where: { id: userId } });
         if (!user) return null;
-        return {
-          id: user!.id,
-          name: user!.name || "",
-        };
+        return user;
       },
     }),
   ],
@@ -59,7 +57,7 @@ export const authOptions = {
         // @ts-ignore
         ...(token || session).user,
       };
-      console.log("session", session);
+      // console.log("session", session);
       return session;
     },
   },
