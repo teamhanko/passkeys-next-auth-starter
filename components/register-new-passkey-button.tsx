@@ -10,7 +10,7 @@ import {
 const RegisterNewPasskey = () => {
     async function registerPasskey() {
         const createOptions = await startServerPasskeyRegistration();
-        const credential = await create(createOptions as CredentialCreationOptionsJSON);
+        const credential = await create(createOptions as any);
         await finishServerPasskeyRegistration(credential);
     }
     return (

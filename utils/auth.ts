@@ -10,7 +10,6 @@ import {
 import prisma from "./db";
 
 export const authOptions = {
-  adapter: PrismaAdapter(prisma),
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID!,
@@ -42,4 +41,26 @@ export const authOptions = {
       },
     }),
   ],
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: "jwt" },
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      if (!token.email) {
+        return {};
+      }
+      if (user) {
+        token.user = user;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      (session.user) = {
+        id: token.sub,
+        // @ts-ignore
+        ...(token || session).user,
+      };
+      console.log("session", session);
+      return session;
+    },
+  },
 } satisfies NextAuthOptions;
