@@ -2,6 +2,7 @@
 
 import { finishServerPasskeyRegistration, startServerPasskeyRegistration } from '@/lib/passkey';
 import { Button } from './ui/button'
+import Passkey from './icons/passkey';
 import {
     create,
     type CredentialCreationOptionsJSON,
@@ -18,6 +19,7 @@ const RegisterNewPasskey = () => {
             onClick={() => registerPasskey()}
             className="flex justify-center items-center space-x-2"
         >
+            <Passkey className="w-4 h-4 mr-2" />
             Register a new passkey
         </Button>
     )

@@ -12,7 +12,7 @@ export default async function DashboardLayout({
     const user = session?.user
     return (
         <div>
-            <header className='flex justify-between items-center p-4 border-b'>
+            <header className='flex justify-between items-center p-6 px-12 border-b'>
                 <div>
                     <p className="text-2xl font-bold">Hanko</p>
                 </div>

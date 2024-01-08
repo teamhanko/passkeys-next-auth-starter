@@ -14,7 +14,7 @@ const SignInForm = () => {
     async function signInWithEmail() {
         const signInResult = await signIn('email', {
             email,
-            callbackUrl: `${window.location.origin}/dashboard`,
+            callbackUrl: `${window.location.origin}/dashboard/settings`,
             redirect: false,
         })
 
