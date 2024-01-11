@@ -42,23 +42,18 @@ export const authOptions = {
   adapter: PrismaAdapter(prisma),
   session: { strategy: "jwt" },
   callbacks: {
-    jwt: async ({ token, user }) => {
-      if (!token.email) {
-        return {};
+    session: ({ session, token }) => {
+      if (token) {
+        return {
+          ...session,
+          user: {
+            ...session.user,
+            id: token.sub,
+          },
+        };
+      } else {
+        return session;
       }
-      if (user) {
-        token.user = user;
-      }
-      return token;
-    },
-    session: async ({ session, token }) => {
-      (session.user) = {
-        id: token.sub,
-        // @ts-ignore
-        ...(token || session).user,
-      };
-      // console.log("session", session);
-      return session;
     },
   },
 } satisfies NextAuthOptions;
