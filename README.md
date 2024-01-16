@@ -1,6 +1,6 @@
 # Hanko Passkey Starter for Next-Auth
 
-This repo shows how you can add passkey login with Hanko to your Next.js app that uses Next-Auth for authentication
+This repo shows how you can add passkey login with Hanko Passkey API to your Next.js app that uses Next-Auth for authentication.
 
 ## Technologies used
 
