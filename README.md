@@ -15,7 +15,7 @@ This repo shows how you can add passkey login with Hanko Passkey API to your Nex
 ## Clone the repo
 
 ```bash
-git clone https://github.com/teamhanko/hanko-passkey-starter.git
+git clone https://github.com/teamhanko/passkeys-next-auth-starter.git
 ```
 
 ## Add the environment variables
