@@ -2,6 +2,8 @@
 
 This repository demonstrates how to add passkey login functionality to your Next.js app using NextAuth and Hanko Passkey API. Passkey authentication is a secure and user-friendly alternative to traditional password-based authentication, providing a seamless login experience for users.
 
+For a detailed tutorial on implementing passkey login in your Next.js app using NextAuth, refer to our blog post: [Add passkeys to your Next.js app using NextAuth](https://www.hanko.io/blog/passkeys-nextjs-nextauth)
+
 ![Passkey demo](/passkey.gif)
 
 ## Prerequisites
